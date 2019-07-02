@@ -1,3 +1,9 @@
 import { createPost } from './actions';
+import { postsReducer } from './reducers';
 
-console.log(createPost('dan', 'New post'));
+const initialState = [];
+
+const action = createPost('Dan', 'New post');
+
+const newState = postsReducer(initialState, action);
+console.log(newState);
