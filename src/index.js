@@ -1,9 +1,5 @@
 import { createPost } from './actions';
-import { postsReducer } from './reducers';
+import appReducer, { postsReducer } from './reducers';
 
-const initialState = [];
-
-const action = createPost('Dan', 'New post');
-
-const newState = postsReducer(initialState, action);
-console.log(newState);
+let state = appReducer(undefined, { type: 'INIT_ACTION' });
+console.log('initial state:', state);
