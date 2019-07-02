@@ -8,9 +8,9 @@ function postsReducer(state = [], action) {
       return [...state, post];
     }
     case EDIT_POST: {
-      const { type, ...newPost } = action;
+      const { type, id, ...newPost } = action;
       return state.map((post, i) =>
-        post.id === i ? { ...post, ...newPost } : post
+        id === i ? { ...post, ...newPost } : post
       );
     }
     default:
